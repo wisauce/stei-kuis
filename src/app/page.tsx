@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <header>
       <nav>
-        <ul className="container flex gap-8 flex-col items-center h-screen">
+        <ul className="container flex gap-8 flex-col items-center h-screen justify-center">
           <div>
             <Image
               src="/logolfm.jpg"
@@ -45,41 +45,41 @@ export default function Home() {
             </Image>
           </div>
           <div>
-            <h1 className="text-8xl text-center">BIDANG APA SIH YANG COCOK BUAT AKU?</h1>
+            <h1 className="text-4xl text-center">BIDANG APA SIH YANG COCOK BUAT AKU?</h1>
           </div>
           <div>
             <button onClick={() => {
               coverToggle(true)
-              oneToggle(true)}} className="border-2 border-white bg-transparent py-4 px-8 rounded-full m-10 text-5xl animate-pulse">Start</button>
+              oneToggle(true)}} className="border-2 border-white bg-transparent py-4 px-8 rounded-full m-10 text-3xl animate-pulse">Start</button>
           </div>
-          <div className="fixed bottom-8">
+          <div>
             <p>#JanganMauMasukLFM</p>
           </div>
           {one && 
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
             <div className="w-5/6 h-3/4 text-black bg-[#EEEBE3] rounded-3xl p-8 flex flex-col m-2">
-              <div><p className="font-bold text-5xl">Kalau kamu jadi benda, kira-kira mau jadi benda apa?</p></div>
+              <div><p className="font-bold text-3xl">Kalau kamu jadi benda, kira-kira mau jadi benda apa?</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
                   setScore(score + 2)
                   oneToggle(false)
                   twoToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">CCTV</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">CCTV</div>
                 <div onClick={() => {
                   setScore(score + 3)
                   oneToggle(false)
                   twoToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Mading</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Mading</div>
                 <div onClick={() => {
                   setScore(score + 1)
                   oneToggle(false)
                   twoToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">SD Card</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">SD Card</div>
                 <div onClick={() => {
                   setScore(score + 4)
                   oneToggle(false)
                   twoToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Lukisan</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Lukisan</div>
               </div>
             </div>
             <div>
@@ -90,28 +90,28 @@ export default function Home() {
           {two && 
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
             <div className="w-5/6 h-3/4 text-black bg-[#EEEBE3] rounded-3xl p-8 flex flex-col m-2">
-              <div><p className="font-bold text-5xl">Kalau kamu dateng ke sebuah pameran, kamu adalah tipe orang yang...</p></div>
+              <div><p className="font-bold text-xl">Kalau kamu dateng ke sebuah pameran, kamu adalah tipe orang yang...</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
                   setScore(score + 3)
                   twoToggle(false)
                   threeToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Bengong 20 menit mantengin karya</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Bengong 20 menit mantengin karya</div>
                 <div onClick={() => {
                   setScore(score + 1)
                   twoToggle(false)
                   threeToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh gila ini bagus banget anglenya, post di dump acc ahh"</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh gila ini bagus banget anglenya, post di dump acc ahh"</div>
                 <div onClick={() => {
                   setScore(score + 2)
                   twoToggle(false)
                   threeToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">kalau ga ngevlog bikin timelapse</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">kalau ga ngevlog bikin timelapse</div>
                 <div onClick={() => {
                   setScore(score + 4)
                   twoToggle(false)
                   threeToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh ini mirip kaya di film apa gitu"</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh ini mirip kaya di film apa gitu"</div>
               </div>
             </div>
             <div>
@@ -134,7 +134,7 @@ export default function Home() {
                     width={1000}
                     height={1000}
                     alt="Picture of the author"
-                    className="object-cover w-1/2 h-3/4"  
+                    className="object-cover w-4/5 h-4/5"  
                     >
                   </Image></div>
                 <div onClick={() => {
@@ -146,7 +146,7 @@ export default function Home() {
                   width={1000}
                   height={1000}
                   alt="Picture of the author"
-                  className="object-cover w-1/2 h-3/4"  
+                  className="object-cover w-4/5 h-4/5"  
                   >
                 </Image></div>
                 <div onClick={() => {
@@ -158,7 +158,7 @@ export default function Home() {
                   width={1000}
                   height={1000}
                   alt="Picture of the author"
-                  className="object-cover w-1/2 h-3/4"  
+                  className="object-cover w-4/5 h-4/5"  
                   >
                 </Image></div>
                 <div onClick={() => {
@@ -170,7 +170,7 @@ export default function Home() {
                   width={1000}
                   height={1000}
                   alt="Picture of the author"
-                  className="object-cover w-1/2 h-3/4"                >
+                  className="object-cover w-4/5 h-4/5"                >
                 </Image></div>
               </div>
             </div>
@@ -182,28 +182,28 @@ export default function Home() {
           {four && 
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
             <div className="w-5/6 h-3/4 text-black bg-[#EEEBE3] rounded-3xl p-8 flex flex-col m-2">
-              <div><p className="font-bold text-4xl">Pas lagi nonton film, kamu adalah tipe orang yang...</p></div>
+              <div><p className="font-bold text-2xl">Pas lagi nonton film, kamu adalah tipe orang yang...</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
                   setScore(score + 1)
                   fourToggle(false)
                   fiveToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"wah ini anglenya kece sih"</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"wah ini anglenya kece sih"</div>
                 <div onClick={() => {
                   setScore(score + 2)
                   fourToggle(false)
                   fiveToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh ini ngeditnya gimana keren banget 😭"</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh ini ngeditnya gimana keren banget 😭"</div>
                 <div onClick={() => {
                   setScore(score + 4)
                   fourToggle(false)
                   fiveToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">berpikir keras mencoba memahami makna dari film</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">berpikir keras mencoba memahami makna dari film</div>
                 <div onClick={() => {
                   setScore(score + 3)
                   fourToggle(false)
                   fiveToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"whoah karakter-karakternya menarik banget"</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"whoah karakter-karakternya menarik banget"</div>
               </div>
             </div>
             <div>
@@ -220,22 +220,22 @@ export default function Home() {
                   setScore(score + 1)
                   fiveToggle(false)
                   sixToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Instagram</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Instagram</div>
                 <div onClick={() => {
                   setScore(score + 4)
                   fiveToggle(false)
                   sixToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Twitter</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Twitter</div>
                 <div onClick={() => {
                   setScore(score + 3)
                   fiveToggle(false)
                   sixToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Tiktok</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Tiktok</div>
                 <div onClick={() => {
                   setScore(score + 2)
                   fiveToggle(false)
                   sixToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Youtube</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Youtube</div>
               </div>
             </div>
             <div>
@@ -246,28 +246,28 @@ export default function Home() {
           {six && 
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
             <div className="w-5/6 h-3/4 text-black bg-[#EEEBE3] rounded-3xl p-8 flex flex-col m-2">
-              <div><p className="font-bold text-4xl">Kalo di kepanitiaan kamu biasanya divisi apa?</p></div>
+              <div><p className="font-bold text-2xl">Kalo di kepanitiaan kamu biasanya divisi apa?</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
                   setScore(score + 1)
                   sixToggle(false)
                   sevenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Pubdok lah</div>
+                  }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Pubdok lah</div>
                 <div onClick={() => {
                   setScore(score + 4)
                   sixToggle(false)
                   sevenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">bagian nonton ae gue mah</div>
+                  }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">bagian nonton ae gue mah</div>
                 <div onClick={() => {
                   setScore(score + 3)
                   sixToggle(false)
                   sevenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Acara!!!</div>
+                  }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Acara!!!</div>
                 <div onClick={() => {
                   setScore(score + 2)
                   sixToggle(false)
                   sevenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">si konten kreator hitz</div>
+                  }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">si konten kreator hitz</div>
               </div>
             </div>
             <div>
@@ -278,28 +278,28 @@ export default function Home() {
           {seven && 
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
             <div className="w-5/6 h-3/4 text-black bg-[#EEEBE3] rounded-3xl p-8 flex flex-col m-2">
-              <div><p className="font-bold text-4xl">Libur telah tiba!!! enaknya ngapain yak??</p></div>
+              <div><p className="font-bold text-2xl">Libur telah tiba!!! enaknya ngapain yak??</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
                   setScore(score + 4)
                   sevenToggle(false)
                   eightToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">marathon film</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">marathon film</div>
                 <div onClick={() => {
                   setScore(score + 2)
                   sevenToggle(false)
                   eightToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">main game/tidur/makan</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">main game/ tidur/ makan</div>
                 <div onClick={() => {
                   setScore(score + 1)
                   sevenToggle(false)
                   eightToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">jalan-jalan ke tempat estetik</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">jalan-jalan ke tempat estetik</div>
                 <div onClick={() => {
                   setScore(score + 3)
                   sevenToggle(false)
                   eightToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">pergi ke pameran</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">pergi ke pameran</div>
               </div>
             </div>
             <div>
@@ -316,22 +316,22 @@ export default function Home() {
                   setScore(score + 2)
                   eightToggle(false)
                   nineToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">laba-laba sunda</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">laba-laba sunda</div>
                 <div onClick={() => {
                   setScore(score + 4)
                   eightToggle(false)
                   nineToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">wong kar whai beli seblak</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">wong kar whai beli seblak</div>
                 <div onClick={() => {
                   setScore(score + 1)
                   eightToggle(false)
                   nineToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">sepeda vintage karawang</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">sepeda vintage karawang</div>
                 <div onClick={() => {
                   setScore(score + 3)
                   eightToggle(false)
                   nineToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">tuyul kolektor aikatsu</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">tuyul kolektor aikatsu</div>
               </div>
             </div>
             <div>
@@ -348,22 +348,22 @@ export default function Home() {
                   setScore(score + 2)
                   nineToggle(false)
                   tenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Action</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Action</div>
                 <div onClick={() => {
                   setScore(score + 3)
                   nineToggle(false)
                   tenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Slice of life</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Slice of life</div>
                 <div onClick={() => {
                   setScore(score + 4)
                   nineToggle(false)
                   tenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Coming-of-age</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Coming-of-age</div>
                 <div onClick={() => {
                   setScore(score + 1)
                   nineToggle(false)
                   tenToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Mystery/Thriller</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Mystery/ Thriller</div>
               </div>
             </div>
             <div>
@@ -374,24 +374,24 @@ export default function Home() {
           {ten && 
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
             <div className="w-5/6 h-3/4 text-black bg-[#EEEBE3] rounded-3xl p-8 flex flex-col m-2">
-              <div><p className="font-bold text-4xl">Terakhir nih, walaupun udh diperingatin #JanganMauMasukLFM, kamu bakalan tetep daftar ga??</p></div>
+              <div><p className="font-bold">Terakhir nih, walaupun udh diperingatin #JanganMauMasukLFM, kamu bakalan tetep daftar ga??</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
                   tenToggle(false)
                   resultToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">YESSSIRRRRRR</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">YESSSIRRRRRR</div>
                 <div onClick={() => {
                   tenToggle(false)
                   resultToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">gue udah siap banget buat dapet pacar sinefil</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">gue udah siap banget buat dapet pacar sinefil</div>
                 <div onClick={() => {
                   tenToggle(false)
                   resultToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">ga dulu deh TAPI BOONG</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">ga dulu deh TAPI BOONG</div>
                 <div onClick={() => {
                   tenToggle(false)
                   resultToggle(true)
-                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">もちろん</div>
+                  }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">もちろん</div>
               </div>
             </div>
             <div>
