@@ -17,18 +17,21 @@ export default function Home() {
   const [eight, eightToggle] = useState(false)
   const [nine, nineToggle] = useState(false)
   const [ten, tenToggle] = useState(false)
-  const [score,setScore] = useState(0)
+  const [foto,setFoto] = useState(0)
+  const [video,setVideo] = useState(0)
+  const [kine,setKine] = useState(0)
+  const [pertunjukan,setPertunjukan] = useState(0)
   const router = useRouter();
-  function finalResult(score:number) {
-    if (score <= 9) {
+  function finalResult(foto:number,video:number,kine:number,pertunjukan:number) {
+    if ((foto >= video) && (foto >= pertunjukan) && (foto >= kine)) {
       router.push("/foto")
-    } else if (score <= 18) {
+    } else if ((video >= foto) && (video >= pertunjukan) && (video >= kine))  {
       router.push("/video")
-    } else if (score <= 27) {
-      router.push("/pertunjukan")
-    } else {
+    } else if ((kine >= foto) && (kine >= pertunjukan) && (kine >= video)) {
       router.push("/kine")
-    };
+    } else {
+      router.push("/pertunjukan")
+    }
   };
   return (
     <header>
@@ -45,7 +48,7 @@ export default function Home() {
             </Image>
           </div>
           <div>
-            <h1 className="text-4xl text-center">BIDANG APA SIH YANG COCOK BUAT AKU?</h1>
+            <h1 className="text-4xl text-center font-bold">BIDANG APA SIH YANG COCOK BUAT AKU?</h1>
           </div>
           <div>
             <button onClick={() => {
@@ -61,22 +64,22 @@ export default function Home() {
               <div><p className="font-bold text-3xl">Kalau kamu jadi benda, kira-kira mau jadi benda apa?</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   oneToggle(false)
                   twoToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">CCTV</div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan+ 1)
                   oneToggle(false)
                   twoToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Mading</div>
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   oneToggle(false)
                   twoToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">SD Card</div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   oneToggle(false)
                   twoToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Lukisan</div>
@@ -93,22 +96,22 @@ export default function Home() {
               <div><p className="font-bold text-xl">Kalau kamu dateng ke sebuah pameran, kamu adalah tipe orang yang...</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 1)
                   twoToggle(false)
                   threeToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Bengong 20 menit mantengin karya</div>
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   twoToggle(false)
                   threeToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh gila ini bagus banget anglenya, post di dump acc ahh"</div>
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   twoToggle(false)
                   threeToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">kalau ga ngevlog bikin timelapse</div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   twoToggle(false)
                   threeToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh ini mirip kaya di film apa gitu"</div>
@@ -125,7 +128,7 @@ export default function Home() {
               <div><p className="font-bold text-4xl">Pick your favorite outfit!</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   threeToggle(false)
                   fourToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">
@@ -138,7 +141,7 @@ export default function Home() {
                     >
                   </Image></div>
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   threeToggle(false)
                   fourToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2"><Image
@@ -150,7 +153,7 @@ export default function Home() {
                   >
                 </Image></div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 1)
                   threeToggle(false)
                   fourToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2"><Image
@@ -162,7 +165,7 @@ export default function Home() {
                   >
                 </Image></div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   threeToggle(false)
                   fourToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-3xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2"><Image
@@ -185,22 +188,22 @@ export default function Home() {
               <div><p className="font-bold text-2xl">Pas lagi nonton film, kamu adalah tipe orang yang...</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   fourToggle(false)
                   fiveToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"wah ini anglenya kece sih"</div>
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   fourToggle(false)
                   fiveToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"eh ini ngeditnya gimana keren banget 😭"</div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   fourToggle(false)
                   fiveToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">berpikir keras mencoba memahami makna dari film</div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 1)
                   fourToggle(false)
                   fiveToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">"whoah karakter-karakternya menarik banget"</div>
@@ -217,22 +220,22 @@ export default function Home() {
               <div><p className="font-bold text-4xl">Pick your most used social media!</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   fiveToggle(false)
                   sixToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Instagram</div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   fiveToggle(false)
                   sixToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Twitter</div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 1)
                   fiveToggle(false)
                   sixToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Tiktok</div>
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   fiveToggle(false)
                   sixToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Youtube</div>
@@ -249,22 +252,22 @@ export default function Home() {
               <div><p className="font-bold text-2xl">Kalo di kepanitiaan kamu biasanya divisi apa?</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   sixToggle(false)
                   sevenToggle(true)
                   }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Pubdok lah</div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   sixToggle(false)
                   sevenToggle(true)
                   }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">bagian nonton ae gue mah</div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 1)
                   sixToggle(false)
                   sevenToggle(true)
                   }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Acara!!!</div>
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   sixToggle(false)
                   sevenToggle(true)
                   }} className="bg-black w-full h-full rounded-xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">si konten kreator hitz</div>
@@ -281,22 +284,22 @@ export default function Home() {
               <div><p className="font-bold text-2xl">Libur telah tiba!!! enaknya ngapain yak??</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   sevenToggle(false)
                   eightToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">marathon film</div>
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   sevenToggle(false)
                   eightToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">main game/ tidur/ makan</div>
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   sevenToggle(false)
                   eightToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">jalan-jalan ke tempat estetik</div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 1)
                   sevenToggle(false)
                   eightToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">pergi ke pameran</div>
@@ -313,22 +316,22 @@ export default function Home() {
               <div><p className="font-bold text-4xl">Khodam kamu apa?</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 1)
                   eightToggle(false)
                   nineToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">laba-laba sunda</div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 1)
                   eightToggle(false)
                   nineToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">wong kar whai beli seblak</div>
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   eightToggle(false)
                   nineToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">sepeda vintage karawang</div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 1)
                   eightToggle(false)
                   nineToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">tuyul kolektor aikatsu</div>
@@ -345,22 +348,22 @@ export default function Home() {
               <div><p className="font-bold text-4xl">Genre film favorit?</p></div>
               <div className="grid grid-rows-2 grid-cols-2 gap-4 h-full w-full p-4">
                 <div onClick={() => {
-                  setScore(score + 2)
+                  setVideo(video + 2)
                   nineToggle(false)
                   tenToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Action</div>
                 <div onClick={() => {
-                  setScore(score + 3)
+                  setPertunjukan(pertunjukan + 3)
                   nineToggle(false)
                   tenToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Slice of life</div>
                 <div onClick={() => {
-                  setScore(score + 4)
+                  setKine(kine + 4)
                   nineToggle(false)
                   tenToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Coming-of-age</div>
                 <div onClick={() => {
-                  setScore(score + 1)
+                  setFoto(foto + 1)
                   nineToggle(false)
                   tenToggle(true)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-2xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">Mystery/ Thriller</div>
@@ -406,7 +409,7 @@ export default function Home() {
           {result &&
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
             <div>nih pencet tombolnya kalo bisa</div>
-            <button onClick={() => finalResult(score)} className="bg-white text-black rounded-2xl font-bold px-4 py-2 animate-spin m-4">KAMU ADALAH...</button>
+            <button onClick={() => finalResult(foto,video,kine,pertunjukan)} className="bg-white text-black rounded-2xl font-bold px-4 py-2 animate-spin m-4">KAMU ADALAH...</button>
           </div>
           }
         </ul>
