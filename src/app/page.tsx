@@ -255,12 +255,12 @@ export default function Home() {
                   setVideo(video + 1)
                   sevenToggle(false)
                   eightToggle(true)
+                  setScore(score + 1)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">21 Agustus 2024</div>
                 <div onClick={() => {
                   setFoto(foto + 1)
                   sevenToggle(false)
                   eightToggle(true)
-                  setScore(score + 1)
                   }} className="bg-black w-full h-full rounded-3xl border-black bg-inherit border-2 items-center flex justify-center text-xl font-bold active:bg-black active:text-[#EEEBE3] text-center p-2">22 Agustus 2024</div>
                 <div onClick={() => {
                   setPertunjukan(pertunjukan + 1)
