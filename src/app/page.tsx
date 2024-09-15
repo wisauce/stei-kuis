@@ -375,7 +375,6 @@ export default function Home() {
           }
           {result &&
           <div className="flex w-screen h-screen justify-center items-center flex-col fixed z-20">
-<<<<<<< HEAD
             <div className='text-4xl'>nih pencet tombolnya kalo bisa</div>
             <button onClick={() => finalToggle(true)} className="bg-white text-black rounded-2xl font-bold px-4 py-2 animate-spin m-4">score kamu adalah...</button>
           </div>
@@ -391,10 +390,6 @@ export default function Home() {
               setScore(0)
             }} className='border-2 border-[#40A578] rounded-3xl px-2 py-2 animate-bounce'>Try Again</button></div>
             <div className='mt-8 font-semibold'>Jangan lupa untuk menonton STEI-Klinik di Pitching Area (Auditorium) 🔥😜🙏🙏😭😭😭🥹🥰🤩</div>
-=======
-            <div className="text-2xl">nih pencet tombolnya kalo bisa</div>
-            <button onClick={() => finalResult(foto,video,kine,pertunjukan)} className="bg-white text-black rounded-2xl font-bold px-4 py-2 animate-spin m-4">KAMU ADALAH...</button>
->>>>>>> 4d98977fffaa2cbb7bd29e82ad2c7d4b54d03386
           </div>
           }
         </ul>
